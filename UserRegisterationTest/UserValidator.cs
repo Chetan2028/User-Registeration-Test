@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace UserRegisterationTest
 {
-    class UserValidator
+    public class UserValidator
     {
         //Constants
         public const string REGEX_NAME = "^[A-Z][a-zA-Z]{2,}$";
