@@ -11,7 +11,7 @@ namespace UserRegisterationTest
         public const string REGEX_NAME = "^[A-Z][a-zA-Z]{2,}$";
         public const string REGEX_EMAIL = "^[a-z]{3,}[.][a-z]*[@][a-z]{2}[.][a-z]{2}[.][a-z]*$";
         public const string REGEX_MOBILE_NUMBER = "^[0-9]{2}[ ][0-9]{10}$";
-        public const string REGEX_PASSWORD = "^(?=.*[A-Z])(?=.*[0-9]).{8,}$";
+        public const string REGEX_PASSWORD = @"^(?=.*[!@#$%^&*]){1}(?=.*\d)(?=.*[A-Z]).{8,}$";
 
         /// <summary>
         /// Validates the first name.
