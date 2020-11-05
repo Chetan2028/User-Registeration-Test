@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UserRegisterationTest;
 
 
 namespace UserMSTest
@@ -29,14 +30,18 @@ namespace UserMSTest
         [TestMethod]
         public void GivenImproperFirstName_ShouldReturnFalse()
         {
-            //Arrange
-            string firstName = "chetan";
+            try
+            {
+                //Arrange
+                string firstName = "chetan";
 
-            //Act
-            bool result = userValidator.ValidateLastName(firstName);
-
-            //Assert
-            Assert.IsFalse(result);
+                //Act
+                bool result = userValidator.ValidateLastName(firstName);
+            }
+            catch (UserRegisterationCustomException exception)
+            {
+                Assert.AreEqual("Invalid First Name", exception.Message);
+            }
 
         }
 
@@ -45,7 +50,7 @@ namespace UserMSTest
         /// </summary>
         [TestMethod]
         public void GivenProperLastName_ShouldReturnTrue()
-        {    
+        {
             //Arrange
             string lastName = "Kohli";
 
@@ -61,14 +66,20 @@ namespace UserMSTest
         [TestMethod]
         public void GivenImproperLastName_ShouldReturnFalse()
         {
-            //Arrange
-            string lastName = "kohli";
+            try
+            {
+                //Arrange
+                string lastName = "kohli";
 
-            //Act
-            bool result = userValidator.ValidateLastName(lastName);
+                //Act
+                bool result = userValidator.ValidateLastName(lastName);
+            }
 
-            //Assert
-            Assert.IsFalse(result);
+            catch (UserRegisterationCustomException exception)
+            {
+                Assert.AreEqual("Invalid Last Name", exception.Message);
+            }
+
         }
         /// <summary>
         /// Givens the proper email should return true.
@@ -91,14 +102,18 @@ namespace UserMSTest
         [TestMethod]
         public void GivenImproperEmail_ShouldReturnFalse()
         {
-            //Arrange
-            string email = ".bmchetan2028@gmail.com";
+            try
+            {
+                //Arrange
+                string email = ".bmchetan2028@gmail.com";
 
-            //Act
-            bool result = userValidator.ValidateEmail(email);
-
-            //Assert
-            Assert.IsFalse(result);
+                //Act
+                bool result = userValidator.ValidateEmail(email);
+            }
+            catch (UserRegisterationCustomException exception)
+            {
+                Assert.AreEqual("Invalid Email", exception.Message);
+            }
         }
         /// <summary>
         /// Givens the proper password should return true.
@@ -121,14 +136,19 @@ namespace UserMSTest
         [TestMethod]
         public void GivenImproperPassword_ShouldReturnFalse()
         {
-            //Arrange
-            string password = "akbar@woqyeoi";
+            try
+            {
+                //Arrange
+                string password = "akbar@woqyeoi";
 
-            //Act
-            bool result = userValidator.ValidatePassword(password);
+                //Act
+                bool result = userValidator.ValidatePassword(password);
+            }
+            catch (UserRegisterationCustomException exception)
+            {
+                Assert.AreEqual("Invalid Password", exception.Message);
+            }
 
-            //Assert
-            Assert.IsFalse(result);
         }
         /// <summary>
         /// Givens the proper mobile number should return true.
@@ -151,14 +171,18 @@ namespace UserMSTest
         [TestMethod]
         public void GivenImproperMobileNumber_ShouldReturnFalse()
         {
-            //Arrange
-            string number = "91 895160495";
+            try
+            {
+                //Arrange
+                string number = "91 895160495";
 
-            //Act
-            bool result = userValidator.ValidateMobileNumber(number);
-
-            //Assert
-            Assert.IsFalse(result);
+                //Act
+                bool result = userValidator.ValidateMobileNumber(number);
+            }
+            catch (UserRegisterationCustomException exception)
+            {
+                Assert.AreEqual("Invalid Mobile Number", exception.Message);
+            }
         }
 
         /// <summary>

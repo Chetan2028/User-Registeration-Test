@@ -20,7 +20,21 @@ namespace UserRegisterationTest
         /// <returns></returns>
         public bool ValidateFirstName(string firstName)
         {
-            return Regex.IsMatch(firstName, REGEX_NAME);
+            try
+            {
+                if (Regex.IsMatch(firstName, REGEX_NAME))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                throw new UserRegisterationCustomException(UserRegisterationCustomException.ExceptionType.INVALID_FIRSTNAME, "Invalid First Name");
+            }
         }
 
         /// <summary>
@@ -30,7 +44,21 @@ namespace UserRegisterationTest
         /// <returns></returns>
         public bool ValidateLastName(string lastName)
         {
-            return Regex.IsMatch(lastName, REGEX_NAME);
+            try
+            {
+                if (Regex.IsMatch(lastName,REGEX_NAME))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch 
+            {
+                throw new UserRegisterationCustomException(UserRegisterationCustomException.ExceptionType.INVALID_LASTNAME, "Invalid Last Name");
+            }
         }
 
         /// <summary>
@@ -40,7 +68,21 @@ namespace UserRegisterationTest
         /// <returns></returns>
         public bool ValidateEmail(string email)
         {
-            return Regex.IsMatch(email, REGEX_EMAIL);
+            try
+            {
+                if (Regex.IsMatch(email, REGEX_EMAIL))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                throw new UserRegisterationCustomException(UserRegisterationCustomException.ExceptionType.INVALID_EMAIL, "Invalid Email");
+            }
         }
 
         /// <summary>
@@ -50,7 +92,21 @@ namespace UserRegisterationTest
         /// <returns></returns>
         public bool ValidateMobileNumber(string number)
         {
-            return Regex.IsMatch(number, REGEX_MOBILE_NUMBER);
+            try
+            {
+                if (Regex.IsMatch(number, REGEX_MOBILE_NUMBER))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                throw new UserRegisterationCustomException(UserRegisterationCustomException.ExceptionType.INVALID_MOBILENUMBER, "Invalid Mobile Number");
+            }
         }
 
         /// <summary>
@@ -60,7 +116,21 @@ namespace UserRegisterationTest
         /// <returns></returns>
         public bool ValidatePassword(string password)
         {
-            return Regex.IsMatch(password, REGEX_PASSWORD);
+            try
+            {
+                if (Regex.IsMatch(password, REGEX_PASSWORD))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                throw new UserRegisterationCustomException(UserRegisterationCustomException.ExceptionType.INVALID_PASSWORD, "Invalid Password");
+            }
         }
     }
 }
