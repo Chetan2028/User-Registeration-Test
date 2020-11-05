@@ -15,6 +15,10 @@ namespace UserRegisterationTest
             Console.WriteLine("Enter last name");
             string lastName = Console.ReadLine();
             Console.WriteLine(userValidator.ValidateLastName(lastName));
+
+            Console.WriteLine("Enter Email");
+            string email = Console.ReadLine();
+            Console.WriteLine(userValidator.ValidateEmail(email));
         }
     }
 }
