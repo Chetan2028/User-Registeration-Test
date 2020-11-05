@@ -8,7 +8,7 @@ namespace UserRegisterationTest
     class UserValidator
     {
         //Constants
-        public const string REGEX_NAME = "^[A-Z]{a-zA-Z}{2,}";
+        public const string REGEX_NAME = "^[A-Z][a-zA-Z]{2,}$";
 
         /// <summary>
         /// Validates the first name.
@@ -18,6 +18,16 @@ namespace UserRegisterationTest
         public bool ValidateFirstName(string firstName)
         {
             return Regex.IsMatch(firstName, REGEX_NAME);
+        }
+
+        /// <summary>
+        /// Validates the last name.
+        /// </summary>
+        /// <param name="lastName">The last name.</param>
+        /// <returns></returns>
+        public bool ValidateLastName(string lastName)
+        {
+            return Regex.IsMatch(lastName, REGEX_NAME);
         }
     }
 }
