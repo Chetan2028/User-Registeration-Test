@@ -8,7 +8,7 @@ namespace UserRegisterationTest
     class UserValidator
     {
         //Constants
-        public const string REGEX_NAME = "^[A-Z]{a-zA-Z}{2,}";
+        public const string REGEX_NAME = "^[A-Z][a-zA-Z]{2,}";
 
         /// <summary>
         /// Validates the first name.
